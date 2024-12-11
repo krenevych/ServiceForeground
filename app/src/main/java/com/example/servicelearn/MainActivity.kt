@@ -3,6 +3,7 @@ package com.example.servicelearn
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.servicelearn.MyService.Companion.getServiceIntent
 import com.example.servicelearn.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             Log.d(TAG, "onCreate: Hello!")
+
+            getServiceIntent(this@MainActivity)
         }
     }
 }

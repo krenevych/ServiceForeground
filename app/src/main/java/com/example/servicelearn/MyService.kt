@@ -1,6 +1,7 @@
 package com.example.servicelearn
 
 import android.app.Service
+import android.content.Context
 import android.content.Intent
 import android.util.Log
 
@@ -26,5 +27,11 @@ class MyService : Service() {
         super.onDestroy()
 
         Log.d(TAG, "onDestroy: Service")
+    }
+
+    companion object {
+        fun getServiceIntent(context: Context) : Intent {
+            return Intent(context, MyService::class.java)
+        }
     }
 }
