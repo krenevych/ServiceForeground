@@ -1,4 +1,4 @@
-package com.example.servicelearn
+package com.example.serviceforeground
 
 import org.junit.Test
 

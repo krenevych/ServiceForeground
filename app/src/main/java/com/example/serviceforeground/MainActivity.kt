@@ -1,12 +1,12 @@
-package com.example.servicelearn
+package com.example.serviceforeground
 
 import android.Manifest
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.example.servicelearn.PersistentService.Companion.intent
-import com.example.servicelearn.databinding.ActivityMainBinding
+import com.example.serviceforeground.PersistentService.Companion.intent
+import com.example.serviceforeground.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

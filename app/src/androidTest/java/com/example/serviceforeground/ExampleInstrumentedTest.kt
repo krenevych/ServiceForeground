@@ -1,4 +1,4 @@
-package com.example.servicelearn
+package com.example.serviceforeground
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

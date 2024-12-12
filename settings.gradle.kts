@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ServiceLearn"
+rootProject.name = "ServiceForeground"
 include(":app")

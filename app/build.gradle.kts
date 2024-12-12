@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.servicelearn"
+    namespace = "com.example.serviceforeground"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.servicelearn"
+        applicationId = "com.example.serviceforeground"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

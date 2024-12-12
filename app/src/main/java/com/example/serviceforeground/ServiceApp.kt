@@ -1,4 +1,4 @@
-package com.example.servicelearn
+package com.example.serviceforeground
 
 import android.app.Application
 import android.app.Notification
@@ -16,11 +16,6 @@ class ServiceApp : Application() {
             CHANNEL_PERSISTENT_ID,
             CHANNEL_PERSISTENT_NAME,
         )
-
-        createChannel(
-            "jgkjhgjghk",
-            "jkgkjg",
-        )
     }
 
     private fun createChannel(
@@ -29,16 +24,16 @@ class ServiceApp : Application() {
     ) {
         val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-             val channel = NotificationChannel(
-                 id,
-                 name,
+            val channel = NotificationChannel(
+                id,
+                name,
                 NotificationManager.IMPORTANCE_HIGH
             ).also {
                 it.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) it.isBlockable = true
             }
 
-             notificationManager.createNotificationChannel(channel)
+            notificationManager.createNotificationChannel(channel)
 
         }
     }

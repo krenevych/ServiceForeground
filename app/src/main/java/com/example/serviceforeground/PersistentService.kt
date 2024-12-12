@@ -1,4 +1,4 @@
-package com.example.servicelearn
+package com.example.serviceforeground
 
 import android.app.Notification
 import android.app.Service
@@ -55,7 +55,7 @@ class PersistentService : Service() {
             do {
                 Log.d(TAG, "service is running")
                 delay(1000)
-            }  while (isRunning)
+            } while (isRunning)
             Log.d(TAG, "service has finished")
         }
 
