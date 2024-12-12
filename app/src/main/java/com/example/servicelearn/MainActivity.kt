@@ -1,9 +1,11 @@
 package com.example.servicelearn
 
+import android.Manifest
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.example.servicelearn.MyService.Companion.getServiceIntent
+import androidx.core.app.ActivityCompat
+import com.example.servicelearn.PersistentService.Companion.intent
 import com.example.servicelearn.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,10 +18,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.button.setOnClickListener {
-            Log.d(TAG, "onCreate: Hello!")
+        checkPermissions()
 
-            getServiceIntent(this@MainActivity)
+        binding.buttonRun.setOnClickListener {
+            startService(intent(this@MainActivity, Actions.START))
         }
+
+        binding.buttonStop.setOnClickListener {
+            startService(intent(this@MainActivity, Actions.STOP))
+        }
+
+
+    }
+
+    private fun checkPermissions() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                0
+            )
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.FOREGROUND_SERVICE_DATA_SYNC),
+                1
+            )
+
     }
 }
