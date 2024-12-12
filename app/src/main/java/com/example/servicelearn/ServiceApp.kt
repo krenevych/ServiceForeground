@@ -16,6 +16,11 @@ class ServiceApp : Application() {
             CHANNEL_PERSISTENT_ID,
             CHANNEL_PERSISTENT_NAME,
         )
+
+        createChannel(
+            "jgkjhgjghk",
+            "jkgkjg",
+        )
     }
 
     private fun createChannel(
